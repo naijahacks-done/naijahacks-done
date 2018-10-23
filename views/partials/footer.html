@@ -1,0 +1,138 @@
+<% var query = /dashboard|account|orders|partners|products|transactions/; %>
+<% if(!query.test(url)){ %>
+    <footer class="footer" style="background-color: #21252d !important; color: #ffffff !important;">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="footer-ribbon">
+                    Get in touch
+                </div><!-- End .footer-ribbon -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-5">
+                            </div><!-- End .col-md-5 -->
+                            <div class="col-md-3">
+                                <div class="widget">
+                                    <h4 class="widget-title">Account</h4>
+    
+                                    <ul class="links">
+                                        <li><a href="/dashboard">My Dashboard</a></li>
+                                        <li><a href="/account">My Account</a></li>
+                                        <li><a href="/partners">My Partners</a></li>
+                                        <li><a href="/transactions">My Transactions</a></li>
+                                    </ul>
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-md-3 -->
+    
+                            <div class="col-md-5">
+                                <div class="widget">
+                                    <h4 class="widget-title">Menu </h4>
+    
+                                    <ul class="links">
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/marketplace">Marketplace</a></li>
+                                        <li><a href="/community">Community</a></li>
+                                        <li><a href="/blog">Blog</li>
+                                        <li><a href="/login">Login</a></li>
+                                        <li><a href="/register">Register</a></li>
+                                    </ul>
+                                </div><!-- End .widget -->
+                            </div><!-- End .col-md-5 -->
+                        </div><!-- End .row -->
+                    </div><!-- End .col-lg-8 -->
+    
+                    <div class="col-lg-4">
+                        <div class="widget widget-newsletter">
+                            <h4 class="widget-title">Report a problem</h4>
+                            <p>Try communicating with us, if any probelm is found using our site.</p>
+                            <form action="#" method="POST">
+                                <input type="email" class="form-control" name="report_email" placeholder="Email address"
+                                    required>
+                                <textarea class="form-control" name="note" placeholder="Note..." required></textarea>
+    
+                                <input type="submit" class="btn" value="Report">
+                            </form>
+                        </div><!-- End .widget -->
+                    </div><!-- End .col-lg-4 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+        </div><!-- End .footer-middle -->
+    
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="footer-copyright">GreenHub. &copy; 2018. All Rights Reserved</p>
+                <img src="/assets/images/payments.png" alt="payment methods" class="footer-payments">
+    
+                <div class="social-icons">
+                    <a href="https://facebook.com" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
+                    <a href="https://twitter.com" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
+                    <a href="https://linkedIn.com" class="social-icon" target="_blank"><i class="icon-linkedin"></i></a>
+                </div><!-- End .social-icons -->
+            </div><!-- End .footer-bottom -->
+        </div><!-- End .containr -->
+    </footer><!-- End .footer -->
+<% } %>
+</div><!-- End .page-wrapper -->
+
+<div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
+
+<div class="mobile-menu-container">
+    <div class="mobile-menu-wrapper">
+        <span class="mobile-menu-close"><i class="icon-cancel"></i></span>
+        <nav class="mobile-nav">
+            <ul class="mobile-menu">
+                <br>
+                <br>
+                <form action="#" method="GET">
+                    <div>
+                        <center>
+                            <form action="/search" method="GET">
+                                <input type="search" class="form-control" name="q" id="q" placeholder="Search..."
+                                    required>
+                            </form>
+                        </center>
+                    </div><!-- End .header-search-wrapper -->
+                </form>
+                <div>
+                    <% if(user){ %>
+                        <center>
+                            <h3 class="widget-title header" style="padding: 20px; background-color: transparent; color: #fff; border: none;">
+                                <div style="width: 70px; height: 70px; border-radius: 50%; border: 0.2rem solid #7aa93c; background-image: url('assets/images/profile-img/<%= user.profileImage || `default_user.jpg` %>'); background-position: center center; background-repeat: no-repeat; background-size: cover;"></div>
+                                <%= name= user.full_name %><br>
+                                <span style="font-size: 15px; font-weight: lighter;">
+                                    <%= category= user.category %></span>
+                            </h3>
+                        </center>
+                        <li class="<%= (title == 'Dashboard') ? 'active' : '' %>"><a href="/dashboard">Dashboard</a></li>
+                        <li class="<%= (title == 'Account') ? 'active' : '' %>"><a href="/account">Account</a></li>
+                        <li class="<%= (title == 'Store') ? 'active' : '' %>"><a href="/store">Store</a></li>
+                        <li class="<%= (title == 'Transactions') ? 'active' : '' %>"><a href="/transactions">Transactions</a></li>
+                        <li class="<%= (title == 'Orders') ? 'active' : '' %>"><a href="/orders">Orders</a></li>
+                        <li class="<%= (title == 'Partners') ? 'active' : '' %>"><a href="/partners">Partners</a></li>
+                        <li class="<%= (title == 'Logout') ? 'active' : '' %>"><a href="/logout">Logout</a></li>
+                        <hr>
+                    <% } %>
+                </div><!-- End .widget -->
+                <li class="<%= (title == 'Home') ? 'active' : '' %>"><a href="/">Home</a></li>
+                <li class="<%= (title == 'Marketplace') ? 'active' : '' %>">
+                    <a href="/marketplace">Marketplace</a>
+                </li>
+                <li class="<%= (title == 'Community') ? 'active' : '' %>"><a href="/community">Community</a></li>
+                <li class="<%= (title == 'Blog') ? 'active' : '' %>"><a href="/blog">Blog</a></li>
+                <% if(!user){ %>
+                <li class="<%= (title == 'Login') ? 'active' : '' %>"><a href="/login">Login</a></li>
+                <li class="<%= (title == 'Register') ? 'active' : '' %>"><a href="/register">Register</a></li>
+                <% } %>
+            </ul>
+        </nav><!-- End .mobile-nav -->
+
+        <div class="social-icons">
+            <a href="#" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
+            <a href="#" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
+        </div><!-- End .social-icons -->
+    </div><!-- End .mobile-menu-wrapper -->
+</div><!-- End .mobile-menu-container -->
+
+<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+<!-- Plugins JS File -->

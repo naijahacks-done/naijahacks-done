@@ -1,0 +1,56 @@
+<%- include('../partials/header.html'); %>
+<main class="main">
+    <%- include('../partials/bread-nav.html'); %>
+
+    <%- messages() %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 order-lg-last dashboard-content">
+                <!-- <div class="alert alert-success alert-intro" role="alert">
+                    Thank you for registering with Porto - Premium Template.
+                </div>End .alert -->
+
+                <!-- <div class="alert alert-success" role="alert">
+                    Hello, <strong>Porto customer!</strong> From your My Account Dashboard you have the ability to view
+                    a snapshot of your recent account activity and update your account information. Select a link below
+                    to view or edit information.
+                </div>End .alert -->
+
+                <div class="mb-4"></div><!-- margin -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card" style="background-color: skyblue; color: white; height: 300px;">
+                            <label style="padding: 5px; margin: 10px;">Weather report</label>
+
+                            <div class="card-body">
+                                
+                            </div><!-- End .card-body -->
+                        </div><!-- End .card -->
+                    </div>
+                    <br>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Products: 10
+                            </div><!-- End .card-header -->
+                        </div><!-- End .card -->
+                    </div><!-- End .col-md-6 -->
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Partners: <span> 10</span>
+                            </div><!-- End .card-header -->
+                        </div><!-- End .card -->
+                    </div><!-- End .col-md-6 -->
+                </div><!-- End .row -->
+            </div><!-- End .col-lg-9 -->
+            <!-- Side menu -->
+            <%- include('../partials/dashboard_menu.html'); %>
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+    <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->
+<%- include('../partials/footer.html'); %>

@@ -1,0 +1,132 @@
+<%- include('../partials/header.html'); %>
+<main class="main">
+    <%- include('../partials/bread-nav.html'); %>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 order-lg-last dashboard-content">
+
+                <div class="mb-4"></div><!-- margin -->
+
+                <h3>Account Information</h3>
+
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 order-lg-last dashboard-content">
+                                <form action="account/update" enctype="multipart/form-data" method="POST">
+                                    <center>
+                                        <h3 class="widget-title header" style="border-top: none; padding: 20px;">
+                                            <div class="image-frame col-md-5" style="background-image: url('assets/images/profile-img/<%= user.profileImage || `default_user.jpg` %>')">
+                                                <input type="file" name="profileImage" id="image" accept="image/*">
+                                            </div>
+                                            User Image
+                                            <br>
+                                        </h3>
+                                    </center>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="row">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label for="name">Full Name</label>
+                                                        <input type="text" class="form-control" id="name" name="name"
+                                                            value="<%= user.full_name %>" required>
+                                                    </div><!-- End .form-group -->
+                                                </div><!-- End .col-md-6 -->
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="lastname"> Username</label>
+                                                        <input type="text" class="form-control" id="username" name="username"
+                                                            value="<%= user.username %>" required>
+                                                    </div><!-- End .form-group -->
+                                                </div><!-- End .col-md-6 -->
+                                            </div><!-- End .row -->
+                                        </div><!-- End .col-sm-11 -->
+                                    </div><!-- End .row -->
+
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>"
+                                            required>
+                                    </div><!-- End .form-group -->
+
+                                    <div class="mb-2"></div><!-- margin -->
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="change-pass-checkbox"
+                                            value="1">
+                                        <label class="custom-control-label" for="change-pass-checkbox">Change Password</label>
+                                    </div><!-- End .custom-checkbox -->
+
+                                    <div id="account-chage-pass">
+                                        <h3 class="mb-2">Change Password</h3>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" class="form-control" id="password" name="password">
+                                                </div><!-- End .form-group -->
+                                            </div><!-- End .col-md-6 -->
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="con_pass">Confirm Password</label>
+                                                    <input type="password" class="form-control" id="con_pass" name="con_pass">
+                                                </div><!-- End .form-group -->
+                                            </div><!-- End .col-md-6 -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End #account-chage-pass -->
+
+                                    <div class="form-footer">
+                                        <a href="#"><i class="icon-angle-double-left"></i>Back</a>
+
+                                        <div class="form-footer-right">
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </div><!-- End .form-footer -->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Contact Information
+                                <a href="#" class="card-edit">Edit</a>
+                            </div><!-- End .card-header -->
+
+                            <div class="card-body">
+                                <p>
+                                    You have no info about yourself.<br>
+                                </p>
+                            </div><!-- End .card-body -->
+                        </div><!-- End .card -->
+                    </div><!-- End .col-md-6 -->
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                Shipping Address
+                                <a href="#" class="card-edit">Edit Address</a>
+                            </div><!-- End .card-header -->
+
+                            <div class="card-body">
+                                <div class="col-md-6">
+                                    <address>
+                                        You have not set a default shipping address.<br>
+                                    </address>
+                                </div>
+                            </div><!-- End .card-body -->
+                        </div><!-- End .card -->
+                    </div><!-- End .col-md-6 -->
+                </div><!-- End .row -->
+
+            </div><!-- End .col-lg-9 -->
+            <%- include('../partials/dashboard_menu.html'); %>
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+    <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->
+<%- include('../partials/footer.html'); %>

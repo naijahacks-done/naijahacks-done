@@ -1,0 +1,23 @@
+<aside class="sidebar col-lg-3">
+    <div class="widget widget-dashboard">
+        <center>
+            <h3 class="widget-title header" style="padding: 20px;">
+                <div style="width: 70px; height: 70px; border-radius: 50%; border: 0.2rem solid #7aa93c; background-image: url('assets/images/profile-img/<%= user.profileImage || `default_user.jpg` %>'); background-position: center center; background-repeat: no-repeat; background-size: cover;"></div>
+                <%= user.full_name %><br>
+                <span style="font-size: 15px; font-weight: lighter;">
+                    <%= user.category %></span>
+            </h3>
+        </center>
+
+        <ul class="list">
+            <li class="<%= (title == 'Dashboard') ? 'active' : '' %>"><a href="/dashboard">Dashboard</a></li>
+            <li class="<%= (title == 'Account') ? 'active' : '' %>"><a href="/account">Account</a></li>
+            <li class="<%= (title == 'Store') ? 'active' : '' %>"><a href="/store">Store</a></li>
+            <li class="<%= (title == 'Transactions') ? 'active' : '' %>"><a href="/transactions">Transactions</a></li>
+            <li class="<%= (title == 'Orders') ? 'active' : '' %>"><a href="/orders">Orders</a></li>
+            <li class="<%= (title == 'Partners') ? 'active' : '' %>"><a href="/partners">Partners</a></li>
+            <li class="<%= (title == 'Logout') ? 'active' : '' %>"><a href="/logout">Logout</a></li>
+        </ul>
+        <!-- End New item -->
+    </div><!-- End .widget -->
+</aside><!-- End .col-lg-3 -->

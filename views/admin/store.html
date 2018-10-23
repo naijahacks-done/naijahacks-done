@@ -1,0 +1,134 @@
+<%- include('../partials/header.html'); %>
+<main class="main">
+    <%- include('../partials/bread-nav.html'); %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 order-lg-last dashboard-content">
+                <br>
+                <div class="new_item" id="new_item" style="display: none;">
+                    <br>
+                    <%- messages() %>
+                    <div id="messages">
+                        <% if(typeof errors != 'undefined'){ %>
+                        <% errors.forEach(err => { %>
+                        <ul class="error">
+                            <li>
+                                <%= err.msg %>
+                            </li>
+                        </ul>
+                        <% }); %>
+                        <% } %>
+                    </div>
+                    <form action="/store/new" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="name">Item name</label>
+                                            <input type="text" class="form-control" id="product_name" name="product_name"
+                                                required>
+                                        </div><!-- End .form-group -->
+                                    </div><!-- End .col-md-12 -->
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="email">Price</label>
+                                            <input type="number" class="form-control" id="price" name="price" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-group">
+                                            <label for="email">Description</label>
+                                            <textarea class="form-control" id="description" name="description"
+                                                placeholder="Description about item, it use and other properties about it."
+                                                required></textarea>
+                                        </div><!-- End .form-group -->
+                                    </div><!-- End .col-md-12 -->
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="productImage">Item image</label>
+                                            <div class="image-frame col-md-5" style="background-image: url('assets/images/products/<%= user.productImage || `plus_default.png` %>'); margin: 5px;">
+                                                <input type="file" name="productImage" id="image" accept="image/*" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- End .row -->
+                            </div><!-- End .col-sm-11 -->
+                        </div><!-- End .row -->
+
+
+
+                        <div class="mb-2"></div><!-- margin -->
+
+                        <div class="form-footer">
+                            <div class="form-footer-right">
+                                <input type="submit" name="submit" id="submit" class="btn btn-primary" value="Create">
+                            </div>
+                        </div><!-- End .form-footer -->
+                    </form>
+                </div><!-- End new Form -->
+
+                <div class="mb-4"></div><!-- margin -->
+
+                <h4 for="" style="border-bottom: 1px solid #eee; padding: 10px 0;">
+                    Items
+                    <span>
+                        <button id="new" class="btn btn-primary float-right" onclick="$('#new_item').slideToggle();"
+                            title="Add new item"> + New
+                            item</button>
+                    </span>
+                </h4>
+                <div class="row" style="padding: 0 10px;">
+                    <script>
+                        var product = $('.product');
+                        if(product){
+                            product.add('<div style="opacity: 0.9; margin: 20px; text-align: center;">No item found!!</div>');
+                        }
+                    </script>
+                    <% if(typeof items != undefined || null) { %>
+                        <% for(var i = 0; i < items.length; i++) { %>
+                            <% var item = items[i]; %>
+                            <div class="product product-list">
+                                <figure class="product-image-container">
+                                    <a href="/store/edit:<%= item._id %>" class="product-image">
+                                        <img src="assets/images/products/uploaded/<%= item.productImage %>" alt="product">
+                                    </a>
+                                </figure>
+                                <div class="product-details">
+                                    <h2 class="product-title">
+                                        <a href="/store/edit:<%= item._id %>"><%= item.product_name %></a>
+                                    </h2>
+                                    <div class="ratings-container">
+                                        <br>
+                                    </div><!-- End .product-container -->
+                                    <div class="product-desc">
+                                        <p><%= item.description %></p>
+                                    </div><!-- End .product-desc -->
+                                    <div class="price-box">
+                                        <span class="product-price">N<%= item.price %>.00</span>
+                                    </div><!-- End .price-box -->
+
+                                    <div class="product-action">
+                                        <a href="/store/upload:<%= item._id %>" class="paction add-cart" title="Upload to marketplace">
+                                            <!-- Upload to marketplace -->
+                                            <span>Upload to market</span>
+                                        </a>
+                                    </div><!-- End .product-action -->
+                                </div><!-- End .product-details -->
+                            </div>
+                        <% } %>
+                    <% } else if(typeof items == undefined || null) { %>
+                        <div style="opacity: 0.9; margin: 20px; text-align: center;">No item found!!</div>
+                    <% } %>
+                </div><!-- End .row -->
+            </div><!-- End .col-lg-9 -->
+            <!-- Side menu -->
+            <%- include('../partials/dashboard_menu.html'); %>
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+
+    <div class="mb-5"></div><!-- margin -->
+</main><!-- End .main -->
+<%- include('../partials/footer.html'); %>

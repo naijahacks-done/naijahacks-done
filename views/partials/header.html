@@ -1,0 +1,161 @@
+<div class="page-wrapper">
+    <header class="header" style="background-color: #21252d !important; border: 1px solid transparent;">
+        <div class="header-middle">
+            <div class="container">
+                <div class="header-left">
+                    <button class="mobile-menu-toggler" type="button">
+                        <i class="icon-menu"></i>
+                    </button>
+                    <div class="header-center">
+                        <a href="/" class="logo">
+                            <!-- <img src="/assets/images/logo.png" alt="Porto Logo"> -->
+                            <h2 style="font-size: 35px; padding-bottom: 0px; margin-bottom: 0px;" class="text-primary">Green<span
+                                    style="color: #ffffff;">Hub</span>
+                            </h2>
+                            <small style="color: #f5f5f5;">Home for farmers and Dealers</small>
+                        </a>
+                    </div><!-- End .header-search -->
+                </div><!-- End .header-left -->
+
+                <div class="header-search">
+                    <form action="/search" method="GET">
+                        <div class="header-search-wrapper">
+                            <input type="search" class="form-control" name="q" id="q" placeholder="Search..." required>
+                            <button class="btn" type="submit"><i class="icon-magnifier"></i></button>
+                        </div><!-- End .header-search-wrapper -->
+                    </form>
+                </div><!-- End .header-center -->
+
+                <div class="header-right">
+
+                    <div class="dropdown cart-dropdown">
+                        <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" data-display="static">
+                            <span class="cart-count">4</span>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="dropdownmenu-wrapper">
+                                <div class="dropdown-cart-header">
+                                    <span>Items</span>
+
+                                    <a href="cart.html">See basket</a>
+                                </div><!-- End .dropdown-cart-header -->
+                                <div class="dropdown-cart-products" style="max-height: 230px; overflow: auto;">
+                                    <div class="product">
+                                        <div class="product-details">
+                                            <h4 class="product-title">
+                                                <a href="/marketplace/view/">Basket of Rasberry</a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
+                                                <span class="cart-product-qty">1</span>
+                                                x N850.00
+                                            </span>
+                                        </div><!-- End .product-details -->
+
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace/view/" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-1.jpg" alt="product">
+                                            </a>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                        </figure>
+                                    </div><!-- End .product -->
+
+                                    <div class="product">
+                                        <div class="product-details">
+                                            <h4 class="product-title">
+                                                <a href="/marketplace/view/">Red Apple</a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
+                                                <span class="cart-product-qty">1</span>
+                                                x N299.00
+                                            </span>
+                                        </div><!-- End .product-details -->
+
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace/view/" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-2.jpg" alt="product">
+                                            </a>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                        </figure>
+                                    </div><!-- End .product -->
+                                    <div class="product">
+                                        <div class="product-details">
+                                            <h4 class="product-title">
+                                                <a href="/marketplace/view/">Ofio(Tiget nut) and others</a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
+                                                <span class="cart-product-qty">1</span>
+                                                x N28.00
+                                            </span>
+                                        </div><!-- End .product-details -->
+
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace/view/" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-4.jpg" alt="product">
+                                            </a>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                        </figure>
+                                    </div><!-- End .product -->
+                                    <div class="product">
+                                        <div class="product-details">
+                                            <h4 class="product-title">
+                                                <a href="/marketplace/view/">Cocoa in Bulk</a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
+                                                <span class="cart-product-qty">1</span>
+                                                x N790.00
+                                            </span>
+                                        </div><!-- End .product-details -->
+
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace/view/" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-3.jpg" alt="product">
+                                            </a>
+                                            <a href="#" class="btn-remove" title="Remove Product"><i class="icon-cancel"></i></a>
+                                        </figure>
+                                    </div><!-- End .product -->
+                                </div><!-- End .cart-product -->
+
+                                <div class="dropdown-cart-total">
+                                    <span>Total</span>
+
+                                    <span class="cart-total-price">N1,967.00</span>
+                                </div><!-- End .dropdown-cart-total -->
+
+                                <div class="dropdown-cart-action">
+                                    <a href="checkout-shipping.html" class="btn btn-block">Checkout</a>
+                                </div><!-- End .dropdown-cart-total -->
+                            </div><!-- End .dropdownmenu-wrapper -->
+                        </div><!-- End .dropdown-menu -->
+                    </div><!-- End .dropdown -->
+                </div><!-- End .header-right -->
+            </div><!-- End .container -->
+        </div><!-- End .header-middle -->
+
+        <div class="header-bottom sticky-header" style="background-color: #21252d !important;">
+            <div class="container">
+                <nav class="main-nav">
+                    <ul class="menu sf-arrows">
+                        <li class="<%= (title == 'Home') ? 'active' : '' %>"><a href="/">Home</a></li>
+                        <li class="<%= (title == 'Marketplace') ? 'active' : '' %>">
+                            <a href="/marketplace">Marketplace</a>
+                        </li>
+                        <li class="<%= (title == 'Community') ? 'active' : '' %>"><a href="/community">Community</a>
+                        <li class="<%= (title == 'Blog') ? 'active' : '' %>"><a href="/blog">Blog</a>
+                            <% if (!user) { %>
+                        <li class="<%= (title == 'Login') ? 'active' : '' %>"><a href="/login">Login</a></li>
+                        <li class="<%= (title == 'Register') ? 'active' : '' %>"><a href="/register">Register</a></li>
+                        <% } %>
+                        <% if(user){ %>
+                        <li class="<%= (title == 'Dashboard') ? 'active' : '' %>"><a href="/dashboard">Dashboard</a></li>
+                        <% } %>
+                    </ul>
+                </nav>
+            </div><!-- End .header-bottom -->
+        </div><!-- End .header-bottom -->
+    </header><!-- End .header -->

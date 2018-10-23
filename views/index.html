@@ -1,0 +1,105 @@
+<%- include('./partials/header.html'); %>
+<main class="main">
+    <div class="home-slider-container">
+        <div class="home-slider owl-carousel">
+            <div class="home-slide">
+                <div class="slide-bg owl-lazy" data-src="/assets/images/slider/slider-1.jpg"></div><!-- End .slide-bg -->
+                <div class="home-slide-content container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-6 col-lg-5 offset-lg-7">
+                            <h4>Give</h4>
+                            <h1>to the Soil</h1>
+                            <a href="/register" class="btn btn-primary">Join Now</a>
+                        </div><!-- End .col-lg-5 -->
+                    </div><!-- End .row -->
+                </div><!-- End .home-slide-content -->
+            </div><!-- End .home-slide -->
+
+            <div class="home-slide">
+                <div class="slide-bg owl-lazy" data-src="/assets/images/slider/slider-2.jpg"></div><!-- End .slide-bg -->
+                <div class="home-slide-content container">
+                    <h4>Watch</h4>
+                    <h1>Them grow</h1>
+                    <a href="/register" class="btn btn-primary">Join Now</a>
+                </div><!-- End .home-slide-content -->
+            </div><!-- End .home-slide -->
+
+            <div class="home-slide">
+                <div class="slide-bg owl-lazy" data-src="/assets/images/slider/slider-4.jpg"></div><!-- End .slide-bg -->
+                <div class="home-slide-content container">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-6 col-lg-5 offset-lg-7">
+                            <h4>Get Amazing</h4>
+                            <h1>Farm Machines</h1>
+                            <a href="/marketplace" class="btn btn-primary">Rent Now</a>
+                        </div><!-- End .col-lg-5 -->
+                    </div><!-- End .row -->
+                </div><!-- End .home-slide-content -->
+            </div><!-- End .home-slide -->
+        </div><!-- End .home-slider -->
+    </div><!-- End .home-slider-container -->
+
+    <div class="home-product-tabs">
+        <div class="container">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="featured-products-tab" data-toggle="tab" href="#featured-products"
+                        role="tab" aria-controls="featured-products" aria-selected="true">Latest Items</a>
+                </li>
+            </ul>
+        </div><!-- End .container -->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="featured-products" role="tabpanel" aria-labelledby="featured-products-tab">
+                <div class="container">
+                    <div class="tab-products-carousel owl-carousel owl-theme">
+                        <% if(typeof items != undefined || null) { %>
+                            <% for(var i = 0; i < items.length; i++) { %>
+                                <% var item = items[i]; %>
+                                <div class="product">
+                                    <figure class="product-image-container">
+                                        <a href="/marketplace/view/<%= item._id %>" class="product-image">
+                                            <img src="/assets/images/products/uploaded/<%= item.productImage || `productImage-${i}.jpg` %>" alt="product">
+                                        </a>
+                                
+                                    </figure>
+                                    <div class="product-details">
+                                        <div class="ratings-container">
+                                            <div class="product-ratings">
+                                                <span class="ratings" style="width:80%"></span><!-- End .ratings -->
+                                            </div><!-- End .product-ratings -->
+                                        </div><!-- End .product-container -->
+                                        <h2 class="product-title">
+                                            <a href="/marketplace/view/<%= item._id %>"><%= item.product_name %></a>
+                                        </h2>
+                                        <div class="price-box">
+                                            <span class="product-price">N<%= item.price %>.00</span>
+                                        </div><!-- End .price-box -->
+                                
+                                        <div class="product-action">
+                                            <a href="/marketplace/view/<%= item._id %>" class="paction add-cart" title="Add to Basket">
+                                                <span>Add to Basket</span>
+                                            </a>
+                                        </div><!-- End .product-action -->
+                                    </div><!-- End .product-details -->
+                                </div><!-- End .product -->
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div><!-- End .container -->
+            </div><!-- End .tab-pane -->
+        </div><!-- End .tab-content -->
+    </div><!-- End .home-product-tabs -->
+
+    <div class="mb-1"></div><!-- margin -->
+
+    <div class="promo-section" style="background-image: url(assets/images/promo-bg.jpg)">
+        <div class="container">
+            <h3>The Great community</h3>
+            <h4>Check off our community of dealer and farmers, for more sales and connection</h4>
+            <a href="/community" class="btn btn-primary">Check it out</a>
+        </div><!-- End .container -->
+    </div><!-- End .promo-section -->
+    <br><br>
+    <div class="mb-6"></div><!-- margin -->
+</main><!-- End .main -->
+<%- include('./partials/footer.html'); %>

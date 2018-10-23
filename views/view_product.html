@@ -1,0 +1,246 @@
+<%- include('partials/header.html'); %>
+<main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">Marketplace</a></li>
+                <li class="breadcrumb-item active" aria-current="page">View</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="product-single-container product-single-default">
+                    <% if(typeof items != undefined || null) { %>
+                    <% for(var i = 0; i < items.length; i++) { %>
+                    <% var item = items[i]; %>
+                    <div class="row">
+                        <div class="col-lg-7 col-md-6 product-single-gallery">
+                            <div class="product-slider-container product-item">
+                                <div class="product-single-carousel owl-carousel owl-theme owl-loaded owl-drag">
+                                    <div class="owl-stage-outer">
+                                        <div class="owl-stage" style="transform: translate3d(-940px, 0px, 0px); transition: all 0s ease 0s; width: 3761px;">
+                                            <div class="owl-item cloned" style="width: 470.033px;">
+                                                <div class="product-item">
+                                                    <img class="product-single-image" src="/assets/images/products/uploaded/<%= item.productImage || `productImage-${i}.jpg` %>"
+                                                        alt="ProductImage">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i
+                                                class="icon-angle-left"></i></button><button type="button" role="presentation"
+                                            class="owl-next"><i class="icon-angle-right"></i></button></div>
+                                </div>
+                                <!-- End .product-single-carousel -->
+                            </div>
+                        </div><!-- End .col-lg-7 -->
+                        <div class="col-lg-5 col-md-6">
+                            <div class="product-single-details">
+                                <h1 class="product-title">
+                                    <%= item.product_name %>
+                                </h1>
+
+                                <div class="ratings-container">
+                                    See Owner: <a href="/community/<%= item.owner %>">(
+                                        <%= item.owner %> )</a>
+                                </div><!-- End .product-container -->
+
+                                <div class="price-box">
+                                    <span class="product-price">N
+                                        <%= item.price %>.00</span>
+                                </div><!-- End .price-box -->
+
+                                <div class="product-desc">
+                                    <p>
+                                        <%= item.description %>.</p>
+                                </div><!-- End .product-desc -->
+
+                                <div class="product-action product-all-icons">
+                                    <a href="#" class="paction add-cart" title="Add to Basket">
+                                        <span>Add to Basket</span>
+                                    </a>
+                                </div><!-- End .product-action -->
+                            </div><!-- End .product-single-details -->
+                        </div><!-- End .col-lg-5 -->
+                        <% } %>
+                        <% } %>
+                    </div><!-- End .row -->
+                </div><!-- End .product-single-container -->
+
+                <div class="product-single-tabs">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="product-tab-tags" data-toggle="tab" href="#product-tags-content"
+                                role="tab" aria-controls="product-tags-content" aria-selected="false">Comments</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="product-tags-content" role="tabpanel"
+                            aria-labelledby="product-tab-tags">
+                            <div class="product-tags-content">
+                                <form action="#">
+                                    <h4>Add Comments:</h4>
+                                    <div class="form-group">
+                                        <input class="form-control form-control-sm" required type="text">
+                                        <input class="btn btn-primary" value="Add Comments" type="submit">
+                                    </div><!-- End .form-group -->
+                                </form>
+                            </div><!-- End .product-tags-content -->
+                        </div><!-- End .tab-pane -->
+
+                    </div><!-- End .tab-content -->
+                </div><!-- End .product-single-tabs -->
+            </div><!-- End .col-lg-9 -->
+
+            <div class="sidebar-overlay"></div>
+            <div class="sidebar-toggle"><i class="icon-sliders"></i></div>
+            <aside class="sidebar-shop col-lg-3 order-lg-first">
+                <div class="sidebar-wrapper">
+                    <div class="widget widget-featured">
+                        <h3 class="widget-title">Featured Proucts</h3>
+
+                        <div class="widget-body">
+                            <div class="owl-carousel widget-featured-products">
+                                <div class="featured-col">
+                                    <div class="product product-sm">
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-1.jpg" alt="product">
+                                            </a>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h2 class="product-title">
+                                                <a href="/marketplace">Red Rasbery</a>
+                                            </h2>
+                                            <div class="ratings-container">
+                                                <div class="product-ratings">
+                                                    <span class="ratings" style="width: 80%;"></span><!-- End .ratings -->
+                                                </div><!-- End .product-ratings -->
+                                            </div><!-- End .product-container -->
+                                            <div class="price-box">
+                                                <span class="product-price">N450.00</span>
+                                            </div><!-- End .price-box -->
+                                        </div><!-- End .product-details -->
+                                    </div><!-- End .product -->
+
+                                    <div class="product product-sm">
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-2.jpg" alt="product">
+                                            </a>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h2 class="product-title">
+                                                <a href="/marketplace">Fresh Cocoa</a>
+                                            </h2>
+                                            <div class="ratings-container">
+                                                <div class="product-ratings">
+                                                    <span class="ratings" style="width: 20%;"></span><!-- End .ratings -->
+                                                </div><!-- End .product-ratings -->
+                                            </div><!-- End .product-container -->
+                                            <div class="price-box">
+                                                <span class="old-price">N800.00</span>
+                                                <span class="product-price">N650.00</span>
+                                            </div><!-- End .price-box -->
+                                        </div><!-- End .product-details -->
+                                    </div><!-- End .product -->
+
+                                    <div class="product product-sm">
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-3.jpg" alt="product">
+                                            </a>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h2 class="product-title">
+                                                <a href="/marketplace">Every every</a>
+                                            </h2>
+                                            <div class="ratings-container">
+                                                <div class="product-ratings">
+                                                    <span class="ratings" style="width: 100%;"></span><!-- End .ratings -->
+                                                </div><!-- End .product-ratings -->
+                                            </div><!-- End .product-container -->
+                                            <div class="price-box">
+                                                <span class="product-price">N50.00</span>
+                                            </div><!-- End .price-box -->
+                                        </div><!-- End .product-details -->
+                                    </div><!-- End .product -->
+                                </div><!-- End .featured-col -->
+
+                                <div class="featured-col">
+                                    <div class="product product-sm">
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-4.jpg" alt="product">
+                                            </a>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h2 class="product-title">
+                                                <a href="/marketplace">Bag of beans</a>
+                                            </h2>
+                                            <div class="ratings-container">
+                                                <div class="product-ratings">
+                                                    <span class="ratings" style="width:100%"></span><!-- End .ratings -->
+                                                </div><!-- End .product-ratings -->
+                                            </div><!-- End .product-container -->
+                                            <div class="price-box">
+                                                <span class="old-price">N50000.00</span>
+                                                <span class="product-price">N45000.00</span>
+                                            </div><!-- End .price-box -->
+                                        </div><!-- End .product-details -->
+                                    </div><!-- End .product -->
+
+                                    <div class="product product-sm">
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-5.jpg" alt="product">
+                                            </a>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h2 class="product-title">
+                                                <a href="/marketplace">Clean barrow</a>
+                                            </h2>
+                                            <div class="ratings-container">
+                                                <div class="product-ratings">
+                                                    <span class="ratings" style="width:60%"></span><!-- End .ratings -->
+                                                </div><!-- End .product-ratings -->
+                                            </div><!-- End .product-container -->
+                                            <div class="price-box">
+                                                <span class="product-price">N80.00</span>
+                                            </div><!-- End .price-box -->
+                                        </div><!-- End .product-details -->
+                                    </div><!-- End .product -->
+
+                                    <div class="product product-sm">
+                                        <figure class="product-image-container">
+                                            <a href="/marketplace" class="product-image">
+                                                <img src="/assets/images/products/uploaded/productImage-6.jpg" alt="product">
+                                            </a>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h2 class="product-title">
+                                                <a href="/marketplace">Tools</a>
+                                            </h2>
+                                            <div class="ratings-container">
+                                                <div class="product-ratings">
+                                                    <span class="ratings" style="width:20%"></span><!-- End .ratings -->
+                                                </div><!-- End .product-ratings -->
+                                            </div><!-- End .product-container -->
+                                            <div class="price-box">
+                                                <span class="product-price">N40.00</span>
+                                            </div><!-- End .price-box -->
+                                        </div><!-- End .product-details -->
+                                    </div><!-- End .product -->
+                                </div><!-- End .featured-col -->
+                            </div><!-- End .widget-featured-slider -->
+                        </div><!-- End .widget-body -->
+                    </div><!-- End .widget -->
+                </div><!-- End .sidebar-wrapper -->
+            </aside><!-- End .col-lg-3 -->
+        </div><!-- End .row -->
+    </div><!-- End .container -->
+</main>
+<%- include('partials/footer.html'); %>

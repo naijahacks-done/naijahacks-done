@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>GreenHub -
+        <%= title %>
+    </title>
+
+    <meta name="keywords" content="Grrenhub farm management entreprise web-app" />
+    <meta name="description" content="GreenHub - A farm management/entreprise app">
+    <meta name="author" content="Success chukwu">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/icons/favicon.ico">
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font/css/font-awesome.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+</head>
+<style>
+    .header-center .logo, .header-bottom .logo {
+        text-decoration: none;
+    }
+
+    .menu.sf-arrows li a {
+        color: #ffffff;
+    }
+
+    .menu.sf-arrows li a:hover {
+        color: #7aa93c;
+    }
+
+    .menu.sf-arrows li.active a {
+        color: #7aa93c;
+    }
+
+    .menu.sf-arrows li.active {
+        color: #7aa93c;
+    }
+
+    .widget .list li.active a {
+        color: #fff;
+        background-color: #7aa93c;
+    }
+
+    .mobile-menu-toggler,
+    .search-toggle {
+        color: #ffffff;
+    }
+
+    .cart-dropdown .dropdown-toggle::before{
+        color: #ffffff;
+    }
+
+    .image-frame{
+        background-image: url('/assets/images/profile-img/default_user.jpg');
+        background-color: #f5f8f2;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid #dddddd;
+        border-radius: 20px;
+        max-width: 150px;
+        height: 150px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    #image{
+        position: absolute;
+        left: 0px;
+        font-size: 40px;
+        height: 160px;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+    .product-image-container{
+        border: 1px solid red;
+        background-color: #eee;
+        max-height: 278px !important;
+        overflow: hidden;
+    }
+    
+    .product-image-container .product-image{
+        max-height: 278px !important;
+    }
+    
+    @media (max-width: 986px){
+        aside.sidebar{
+            display: none;
+        }
+    }
+
+</style>
+<body>
+    
+    <%- body %>
+    
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/plugins.min.js"></script>
+    <script src="/assets/js/sweetalert.js"></script>
+
+    <!-- Main JS File -->
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/fileUpload.js"></script>
+    <script src="/assets/js/alert.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
