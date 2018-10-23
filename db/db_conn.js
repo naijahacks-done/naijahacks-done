@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 /*** DB connection */
-mongoose.connect('mongodb://localhost/greenish'); // after "localhost" your db's name follows
+mongoose.connect('mongodb://localhost/greenhub'); // after "localhost" your db's name follows
 var db = mongoose.connection;
 
 // Check for db connection
