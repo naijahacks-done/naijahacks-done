@@ -38,7 +38,7 @@ Apart from illiteracy, most farmers do not know how to keep farm records.
 This makes then to lose track of their activities on the farm, and they cannot give proper account of their finances too.
 This nonchalant attitude towards organisation is another major problems of Agricultural Development in Nigeria.
 
-5: Poor Agricultural policies<br>
+4: Poor Agricultural policies<br>
 Once there are poor Government policies targeted towards agriculture, this will definitely yield a poor result.
 
 # Proposed Solution
