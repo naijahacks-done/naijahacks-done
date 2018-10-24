@@ -17,5 +17,8 @@ router.use("/orders", ordersRouter);
 var partnersRouter = require("./admin/partners"); // partners router
 router.use("/partners", partnersRouter);
 
+var weatherRouter = require("./admin/weather"); // weather router
+router.use("/partners", weatherRouter);
+
 
 module.exports = router;
