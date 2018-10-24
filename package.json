@@ -41,7 +41,10 @@
   "scripts": {
     "start": "node app.js"
   },
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/naijahacks-done/naijahacks-done"
+  },
   "keywords": [
     "farm",
     "entreprise",
@@ -52,10 +55,6 @@
   ],
   "engines": {
     "node": "8.12.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/naijahacks-done/naijahacks-done"
   },
   "author": "Success Chukwu",
   "license": "ISC"
